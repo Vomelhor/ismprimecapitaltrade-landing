@@ -1,20 +1,16 @@
+// src/components/language-switcher.tsx
 "use client"
 
+import { useEffect, useState } from "react"
 import { useLocale } from "next-intl"
-import type { Route } from "next" 
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { locales, localeLabels } from "@/config/locales"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Globe } from "lucide-react"
+import type { Route } from "next"
 
 function replaceLocale(pathname: string, nextLocale: string) {
-  // Assumes pathnames like /en/... , /pt/... etc.
   const parts = pathname.split("/")
   parts[1] = nextLocale
   const nextPath = parts.join("/")
@@ -24,14 +20,19 @@ function replaceLocale(pathname: string, nextLocale: string) {
 export function LanguageSwitcher() {
   const current = useLocale()
   const pathname = usePathname() || `/${current}`
-  const search = useSearchParams()
   const router = useRouter()
+  const [query, setQuery] = useState<string>("")
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setQuery(window.location.search) // read once on mount
+    }
+  }, [])
 
   function go(nextLocale: string) {
     const nextPath = replaceLocale(pathname, nextLocale)
-    const qs = search?.toString()
-    const url = qs ? `${nextPath}?${qs}` : nextPath
-    router.replace(url as Route) 
+    const url = query ? `${nextPath}${query}` : nextPath
+    router.replace(url as Route)
   }
 
   return (

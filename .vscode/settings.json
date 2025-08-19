@@ -3,7 +3,11 @@
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
 
-  // Optional but helpful:
+  "sonarlint.rules": {
+    "css:S4662": { "level": "off" }, // unknown at-rule
+    "css:S4666": { "level": "off" }  // duplicate selector (we already merged :root)
+  },
+
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
