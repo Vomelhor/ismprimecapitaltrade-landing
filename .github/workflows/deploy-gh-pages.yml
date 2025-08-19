@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Required to set up the Pages environment properly
+      - uses: actions/configure-pages@v5
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -29,11 +33,11 @@ jobs:
       - name: Compute basePath
         run: echo "REPO=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-      # Build static export (Next 15: no "next export" step)
+      # Build static site (Next 15: no 'next export' step needed)
       - name: Build static site
         run: NEXT_EXPORT=true NEXT_PUBLIC_BASE_PATH=${{ env.REPO }} NEXT_PUBLIC_DEMO=true npm run build
 
-      # Ensure GitHub Pages doesn’t run Jekyll (protects "_next" assets)
+      # Ensure Pages doesn't run Jekyll (protects _next assets)
       - name: Add .nojekyll
         run: touch out/.nojekyll
 
