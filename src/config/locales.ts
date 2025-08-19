@@ -8,3 +8,5 @@ export const localeLabels: Record<Locale, string> = {
   es: "Español",
   zh: "中文"
 }
+
+export const defaultTimeZone = "America/Sao_Paulo"

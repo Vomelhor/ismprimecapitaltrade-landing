@@ -1,12 +1,5 @@
-import createMiddleware from "next-intl/middleware";
-import {locales, defaultLocale} from "./src/config/locales";
+import createMiddleware from "next-intl/middleware"
+import { locales, defaultLocale } from "./src/config/locales"
 
-export default createMiddleware({
-  locales,
-  defaultLocale,
-  localeDetection: true
-});
-
-export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"]
-};
+export default createMiddleware({ locales, defaultLocale, localeDetection: true })
+export const config = { matcher: ["/((?!api|_next|.*\\..*).*)"] }

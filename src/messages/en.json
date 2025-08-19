@@ -27,5 +27,45 @@
     "grains": "Grains & Derivatives",
     "animalProtein": "Animal Protein",
     "required": "This field is required"
-  }
+  },
+  "strengths": {
+    "title": "Why Choose Us",
+    "subtitle": "Compliance, scale, and logistics to deliver certified Brazilian commodities worldwide.",
+    "largeScale": {
+      "title": "Large-Scale Production & Efficient Sourcing",
+      "bullets": {
+        "1": "Partner producers guarantee high quality and large-scale output.",
+        "2": "Lower production costs via high productivity per hectare in Brazil’s Central-West."
+      }
+    },
+    "compliance": {
+      "title": "Compliance with Chinese Requirements",
+      "bullets": {
+        "1": "Meat from plants authorized by MAPA and GACC.",
+        "2": "Strict sanitary controls and full traceability per Chinese import protocols."
+      }
+    },
+    "safety": {
+      "title": "Food Safety & Sustainability",
+      "bullets": {
+        "1": "Certificates of origin and sustainable practices (e.g., RTRS, animal welfare).",
+        "2": "Commitment to global food security."
+      }
+    },
+    "customization": {
+      "title": "Product Customization",
+      "bullets": {
+        "1": "Meat cuts tailored to consumer preferences (e.g., hotpot cuts, premium portions).",
+        "2": "Grains per custom specs (e.g., high-protein, Non-GMO)."
+      }
+    },
+    "logistics": {
+      "title": "Efficient Logistics",
+      "bullets": {
+        "1": "Integrated with FIOL, FICO and North–South railways.",
+        "2": "Direct access to Northern Arc ports (Barcarena, Itaqui, Santarém).",
+        "3": "Growing use of CIF contracts for importer convenience."
+      }
+    }
+  }  
 }

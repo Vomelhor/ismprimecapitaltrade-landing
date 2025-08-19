@@ -1,13 +1,15 @@
 // next.config.mjs
-import createNextIntlPlugin from 'next-intl/plugin'
+import createNextIntlPlugin from "next-intl/plugin"
+const withNextIntl = createNextIntlPlugin()
 
-// Point to your request config file
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
+const isExport = process.env.NEXT_EXPORT === "true"
+const base = process.env.NEXT_PUBLIC_BASE_PATH || ""
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // optional, nice to have
-  experimental: { typedRoutes: true }
-}
-
-export default withNextIntl(nextConfig)
+export default withNextIntl({
+  experimental: { typedRoutes: true },
+  // Só usa export no Pages
+  output: isExport ? "export" : undefined,
+  images: { unoptimized: isExport }, // se algum dia usar next/image
+  basePath: isExport && base ? base : undefined,
+  assetPrefix: isExport && base ? base : undefined
+})

@@ -6,8 +6,12 @@ export function applyTheme(mode: ThemeMode) {
   const root = document.documentElement
   const systemPrefersDark =
     window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+
   const effectiveDark = mode === "dark" || (mode === "system" && systemPrefersDark)
+
   root.classList.toggle("dark", effectiveDark)
+  // Ensure native controls (scrollbars, inputs) match the theme
+  root.style.colorScheme = effectiveDark ? "dark" : "light"
 }
 
 export function getStoredTheme(): ThemeMode {

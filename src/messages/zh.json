@@ -1,7 +1,31 @@
 {
-  "hero": {
-    "title": "ISM Prime Capital Trade",
-    "subtitle": "巴西认证产品，全球交付。",
-    "cta": "索取报价"
+  "hero": { "title": "ISM Prime Capital Trade", "subtitle": "巴西认证产品，全球交付。", "cta": "获取报价" },
+  "products": { "title": "我们的产品", "subtitle": "提供经过认证的谷物及其衍生品与动物蛋白，面向全球发运。", "cta": "获取报价" },
+  "rfq": {
+    "company": "公司",
+    "name": "联系人姓名",
+    "email": "电子邮箱",
+    "phone": "电话 / WhatsApp",
+    "country": "国家",
+    "productGroup": "产品类别",
+    "product": "产品",
+    "grade": "等级/类型",
+    "gmo": "转基因 / 非转基因",
+    "quantityMt": "数量（吨）",
+    "packaging": "包装",
+    "incoterm": "贸易术语",
+    "destinationPort": "目的港",
+    "window": "交货窗口",
+    "certs": "所需认证",
+    "targetPrice": "目标价格",
+    "notes": "备注",
+    "submit": "提交询价",
+    "sending": "正在发送…",
+    "success": "感谢！我们已收到您的请求。",
+    "error": "提交时出现问题。",
+    "choose": "请选择…",
+    "grains": "谷物及其衍生品",
+    "animalProtein": "动物蛋白",
+    "required": "此字段为必填项"
   }
 }

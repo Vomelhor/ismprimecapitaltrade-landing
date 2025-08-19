@@ -70,31 +70,22 @@ export function RFQForm() {
     }
   })
 
+  const DEMO = process.env.NEXT_PUBLIC_DEMO === "true"
+
   const onSubmit: SubmitHandler<RFQInput> = async (values) => {
     setSent("idle")
-
-    // Honeypot: silently succeed if a bot filled it
-    if (values.website && values.website.trim().length > 0) {
-      setSent("ok")
-      reset({ productGroup: "", gmo: "" })
+    if (values.website && values.website.trim()) { setSent("ok"); reset({productGroup:"", gmo:""}); return }
+  
+    if (DEMO) {
+      // simula sucesso no Pages (sem backend)
+      setTimeout(() => { setSent("ok"); reset({productGroup:"", gmo:""}) }, 400)
       return
     }
-
-    // Parse to OUTPUT type (quantityMt guaranteed number, etc.)
+  
     const payload: RFQData = schema.parse(values)
-
-    const res = await fetch("/api/rfq", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    })
-
-    if (res.ok) {
-      setSent("ok")
-      reset({ productGroup: "", gmo: "" })
-    } else {
-      setSent("error")
-    }
+    const res = await fetch("/api/rfq", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload) })
+    setSent(res.ok ? "ok" : "error")
+    if (res.ok) reset({productGroup:"", gmo:""})
   }
 
   return (

@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # Derive basePath from repo name: "/<repo>"
+      - name: Compute basePath
+        run: echo "REPO=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+      # Build for static export with demo RFQ and basePath for GitHub Pages
+      - run: NEXT_EXPORT=true NEXT_PUBLIC_BASE_PATH=${{ env.REPO }} NEXT_PUBLIC_DEMO=true npm run build
+      - run: npx next export
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

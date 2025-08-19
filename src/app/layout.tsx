@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata } from "next"
 import "./globals.css"
 
@@ -12,7 +13,9 @@ const noFlashScript = `
     const s = localStorage.getItem("theme");
     const m = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const dark = s === "dark" || ((!s || s === "system") && m);
-    if (dark) document.documentElement.classList.add("dark");
+    const root = document.documentElement;
+    root.classList.toggle("dark", dark);
+    root.style.colorScheme = dark ? "dark" : "light";
   } catch {}
 })();
 `

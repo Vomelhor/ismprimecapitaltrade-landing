@@ -2,6 +2,7 @@
 
 import { NextIntlClientProvider, type AbstractIntlMessages } from "next-intl"
 import { ReactNode } from "react"
+import { defaultTimeZone } from "@/config/locales"
 
 export function LocaleProvider({
   children,
@@ -13,7 +14,7 @@ export function LocaleProvider({
   locale: string
 }) {
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone={defaultTimeZone}>
       {children}
     </NextIntlClientProvider>
   )

@@ -1,7 +1,71 @@
 {
-  "hero": {
-    "title": "ISM Prime Capital Trade",
-    "subtitle": "Exportações brasileiras certificadas para o mundo.",
-    "cta": "Solicitar Orçamento"
+  "hero": { "title": "ISM Prime Capital Trade", "subtitle": "Exportações brasileiras certificadas para o mundo.", "cta": "Solicitar Orçamento" },
+  "products": { "title": "Nossos Produtos", "subtitle": "Grãos, derivados e proteína animal com origem certificada, enviados para todo o mundo.", "cta": "Solicitar Orçamento" },
+  "rfq": {
+    "company": "Empresa",
+    "name": "Nome do Contato",
+    "email": "E-mail",
+    "phone": "Telefone / WhatsApp",
+    "country": "País",
+    "productGroup": "Categoria do produto",
+    "product": "Produto",
+    "grade": "Grau/Tipo",
+    "gmo": "Transgênico / Não transgênico",
+    "quantityMt": "Quantidade (t)",
+    "packaging": "Embalagem",
+    "incoterm": "Incoterm",
+    "destinationPort": "Porto de destino",
+    "window": "Janela de entrega",
+    "certs": "Certificações exigidas",
+    "targetPrice": "Preço-alvo",
+    "notes": "Observações",
+    "submit": "Enviar RFQ",
+    "sending": "Enviando...",
+    "success": "Obrigado! Recebemos sua solicitação.",
+    "error": "Ocorreu um problema ao enviar sua solicitação.",
+    "choose": "Escolher...",
+    "grains": "Grãos e Derivados",
+    "animalProtein": "Proteína Animal",
+    "required": "Este campo é obrigatório"
+  },
+  "strengths": {
+    "title": "Por que nos escolher",
+    "subtitle": "Conformidade, escala e logística para entregar commodities brasileiras certificadas em todo o mundo.",
+    "largeScale": {
+      "title": "Produção em Larga Escala & Suprimento Eficiente",
+      "bullets": {
+        "1": "Produtores parceiros garantem alta qualidade e grande capacidade.",
+        "2": "Menor custo via alta produtividade por hectare no Centro-Oeste."
+      }
+    },
+    "compliance": {
+      "title": "Conformidade com Requisitos Chineses",
+      "bullets": {
+        "1": "Carnes de plantas autorizadas pelo MAPA e GACC.",
+        "2": "Controles sanitários rigorosos e rastreabilidade total conforme protocolos chineses."
+      }
+    },
+    "safety": {
+      "title": "Segurança de Alimentos & Sustentabilidade",
+      "bullets": {
+        "1": "Certificados de origem e práticas sustentáveis (ex.: RTRS, bem-estar animal).",
+        "2": "Compromisso com a segurança alimentar global."
+      }
+    },
+    "customization": {
+      "title": "Personalização de Produtos",
+      "bullets": {
+        "1": "Cortes de carne conforme preferência do consumidor (ex.: hotpot, porções premium).",
+        "2": "Grãos conforme especificações (ex.: alto teor proteico, não-OGM)."
+      }
+    },
+    "logistics": {
+      "title": "Logística Eficiente",
+      "bullets": {
+        "1": "Integração com as ferrovias FIOL, FICO e Norte-Sul.",
+        "2": "Acesso direto aos portos do Arco Norte (Barcarena, Itaqui, Santarém).",
+        "3": "Uso crescente de contratos CIF para maior conveniência do importador."
+      }
+    }
   }
 }

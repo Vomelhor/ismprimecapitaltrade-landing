@@ -18,14 +18,16 @@ export function ModeToggle() {
     const initial = getStoredTheme()
     setMode(initial)
     applyTheme(initial)
-
+  
     const mq = window.matchMedia("(prefers-color-scheme: dark)")
     const onChange = () => {
-      if (initial === "system") applyTheme("system")
+      // ✅ Re-read current preference from storage
+      const current = getStoredTheme()
+      if (current === "system") applyTheme("system")
     }
     mq.addEventListener?.("change", onChange)
     return () => mq.removeEventListener?.("change", onChange)
-  }, [])
+  }, [])  
 
   function select(m: ThemeMode) {
     setMode(m)
