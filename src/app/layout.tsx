@@ -3,7 +3,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "ISM Prime Capital Trade",
-  description: "Brazilian commodities & animal protein, delivered worldwide.",
+  description: "Brazilian commodities & animal protein, delivered worldwide."
 }
 
 const noFlashScript = `

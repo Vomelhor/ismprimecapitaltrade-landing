@@ -1,5 +1,16 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+@plugin "tailwindcss-animate";
+
+:root {
+  --grid: radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--color-foreground) 12%, transparent) 1px, transparent 1px);
+}
+body {
+  background-image: var(--grid);
+  background-size: 28px 28px;
+}
+.dark body {
+  background-image: var(--grid);
+}
 
 @custom-variant dark (&:is(.dark *));
 
