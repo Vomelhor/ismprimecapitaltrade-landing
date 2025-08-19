@@ -1,4 +1,31 @@
 {
   "hero": { "title": "ISM Prime Capital Trade", "subtitle": "Certified Brazilian exports worldwide.", "cta": "Request a Quote" },
-  "products": { "title": "Our Products", "subtitle": "Grains, derivatives, and animal protein sourced and shipped worldwide.", "cta": "Request a Quote" }
+  "products": { "title": "Our Products", "subtitle": "Grains, derivatives, and animal protein sourced and shipped worldwide.", "cta": "Request a Quote" },
+  "rfq": {
+    "company": "Company",
+    "name": "Contact Name",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "country": "Country",
+    "productGroup": "Product group",
+    "product": "Product",
+    "grade": "Grade/Type",
+    "gmo": "GMO / NON-GMO",
+    "quantityMt": "Quantity (MT)",
+    "packaging": "Packaging",
+    "incoterm": "Incoterm",
+    "destinationPort": "Destination port",
+    "window": "Delivery window",
+    "certs": "Certifications required",
+    "targetPrice": "Target price",
+    "notes": "Notes",
+    "submit": "Send RFQ",
+    "sending": "Sending...",
+    "success": "Thanks! We’ve received your request.",
+    "error": "There was a problem sending your request.",
+    "choose": "Choose...",
+    "grains": "Grains & Derivatives",
+    "animalProtein": "Animal Protein",
+    "required": "This field is required"
+  }
 }
